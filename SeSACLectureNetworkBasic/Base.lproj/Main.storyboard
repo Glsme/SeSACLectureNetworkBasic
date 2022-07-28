@@ -186,19 +186,6 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8p-h0-KMn">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="bdD-QI-cKn"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Item" id="pbU-K0-k27"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Z1z-xm-arL"/>
-                                    <barButtonItem title="새로고침" id="6zx-TH-581"/>
-                                    <barButtonItem width="42" style="plain" id="0AA-0K-aDl"/>
-                                    <barButtonItem title="Item" id="ukk-rG-Ur4"/>
-                                </items>
-                            </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nju-iG-MV5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,6 +194,33 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8p-h0-KMn">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bdD-QI-cKn"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="xmark" catalog="system" id="chz-l5-w92"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="N4g-Ub-D1Y"/>
+                                    <barButtonItem image="arrow.left" catalog="system" id="Gaw-eK-1fN">
+                                        <connections>
+                                            <action selector="goBackButtonClicked:" destination="1aK-lO-Se1" id="4zE-6E-vIB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Cva-nL-GEb"/>
+                                    <barButtonItem image="arrow.clockwise" catalog="system" id="y91-oI-8vC">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="1aK-lO-Se1" id="Tew-8v-HMM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vN4-h2-tam"/>
+                                    <barButtonItem image="arrow.right" catalog="system" id="fuc-6Z-N23">
+                                        <connections>
+                                            <action selector="goFowardButtonClicked:" destination="1aK-lO-Se1" id="nbG-ut-0oF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gLu-YB-f1z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -234,6 +248,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
