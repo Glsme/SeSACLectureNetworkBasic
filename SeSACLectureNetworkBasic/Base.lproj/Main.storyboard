@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cac-mJ-jsa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6vg-xa-7g6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -285,6 +285,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOd-OV-XW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3904" y="117"/>
+        </scene>
+        <!--Beer View Controller-->
+        <scene sceneID="AEc-zI-ULw">
+            <objects>
+                <viewController storyboardIdentifier="BeerViewController" id="6vg-xa-7g6" customClass="BeerViewController" customModule="SeSACLectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRt-4O-Ssk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i66-yy-Zmq">
+                                <rect key="frame" x="103.5" y="210" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="i66-yy-Zmq" secondAttribute="height" id="RuR-PS-3Dg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-mu-8MY">
+                                <rect key="frame" x="83" y="477" width="248" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB9-mA-gKd">
+                                <rect key="frame" x="168" y="437.5" width="78.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kbi-Xy-uqT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6vW-mu-8MY" firstAttribute="top" secondItem="i66-yy-Zmq" secondAttribute="bottom" constant="60" id="FjN-lf-7pS"/>
+                            <constraint firstItem="i66-yy-Zmq" firstAttribute="width" secondItem="IRt-4O-Ssk" secondAttribute="width" multiplier="0.5" id="P9K-if-cGz"/>
+                            <constraint firstItem="i66-yy-Zmq" firstAttribute="centerX" secondItem="IRt-4O-Ssk" secondAttribute="centerX" id="QhK-SU-fo3"/>
+                            <constraint firstItem="6vW-mu-8MY" firstAttribute="width" secondItem="i66-yy-Zmq" secondAttribute="width" multiplier="1.2" id="VxB-g2-zMw"/>
+                            <constraint firstItem="oB9-mA-gKd" firstAttribute="centerX" secondItem="IRt-4O-Ssk" secondAttribute="centerX" id="ipY-QS-YiG"/>
+                            <constraint firstItem="6vW-mu-8MY" firstAttribute="centerX" secondItem="IRt-4O-Ssk" secondAttribute="centerX" id="pUR-Wc-rML"/>
+                            <constraint firstItem="oB9-mA-gKd" firstAttribute="centerY" secondItem="IRt-4O-Ssk" secondAttribute="centerY" id="xZr-gF-Ov1"/>
+                            <constraint firstItem="i66-yy-Zmq" firstAttribute="centerY" secondItem="IRt-4O-Ssk" secondAttribute="centerY" multiplier="0.7" id="ylM-B7-wAD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerImageView" destination="i66-yy-Zmq" id="ZKB-D3-5In"/>
+                        <outlet property="beerNameLabel" destination="oB9-mA-gKd" id="ddQ-xH-Wzi"/>
+                        <outlet property="descriptionLabel" destination="6vW-mu-8MY" id="EL5-RM-hIz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVm-vQ-btR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4816" y="117"/>
         </scene>
     </scenes>
     <resources>
