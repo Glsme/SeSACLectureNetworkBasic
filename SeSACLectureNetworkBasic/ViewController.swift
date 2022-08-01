@@ -24,6 +24,13 @@ class ViewController: UIViewController, ViewPresentableProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaultsHelper.standard.nickname = "고래밥"
+        
+        title = UserDefaultsHelper.standard.nickname
+        UserDefaultsHelper.standard.age = 80
+        
+        print(UserDefaultsHelper.standard.age)
     }
     
     func configureView() {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850CA23E2897528B0054D7D7 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA23D2897528B0054D7D7 /* ReusableViewProtocol.swift */; };
+		850CA241289757C10054D7D7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA240289757C10054D7D7 /* Constant.swift */; };
+		850CA24328975FB60054D7D7 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA24228975FB60054D7D7 /* UserDefaultsHelper.swift */; };
+		850CA24628977CDC0054D7D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 850CA24528977CDC0054D7D7 /* Alamofire */; };
+		850CA24928977D1E0054D7D7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 850CA24828977D1E0054D7D7 /* SwiftyJSON */; };
 		858FC31E2890DD7F0025715A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FC31D2890DD7F0025715A /* AppDelegate.swift */; };
 		858FC3202890DD7F0025715A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FC31F2890DD7F0025715A /* SceneDelegate.swift */; };
 		858FC3252890DD7F0025715A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858FC3232890DD7F0025715A /* Main.storyboard */; };
@@ -20,9 +25,16 @@
 		85D8B33028922369007F0773 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B32F28922369007F0773 /* LottoViewController.swift */; };
 		85D8B33228923075007F0773 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B33128923075007F0773 /* TranslateViewController.swift */; };
 		85D8B33428923AA6007F0773 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B33328923AA6007F0773 /* WebViewController.swift */; };
+		85F60D3828935D4B0057FDF0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F60D3728935D4B0057FDF0 /* LocationViewController.swift */; };
+		85F60D3E289384D30057FDF0 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85F60D3B289384D30057FDF0 /* Happiness-Sans-Regular.ttf */; };
+		85F60D3F289384D30057FDF0 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85F60D3C289384D30057FDF0 /* Happiness-Sans-Bold.ttf */; };
+		85F60D40289384D30057FDF0 /* Happiness-Sans-Title.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85F60D3D289384D30057FDF0 /* Happiness-Sans-Title.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		850CA23D2897528B0054D7D7 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		850CA240289757C10054D7D7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		850CA24228975FB60054D7D7 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		858FC31A2890DD7F0025715A /* SeSACLectureNetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACLectureNetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858FC31D2890DD7F0025715A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858FC31F2890DD7F0025715A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +50,10 @@
 		85D8B32F28922369007F0773 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		85D8B33128923075007F0773 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		85D8B33328923AA6007F0773 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		85F60D3728935D4B0057FDF0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		85F60D3B289384D30057FDF0 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
+		85F60D3C289384D30057FDF0 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
+		85F60D3D289384D30057FDF0 /* Happiness-Sans-Title.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Title.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +61,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850CA24928977D1E0054D7D7 /* SwiftyJSON in Frameworks */,
+				850CA24628977CDC0054D7D7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850CA23F289757800054D7D7 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				850CA240289757C10054D7D7 /* Constant.swift */,
+				850CA24228975FB60054D7D7 /* UserDefaultsHelper.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		858FC3112890DD7F0025715A = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +97,19 @@
 		858FC31C2890DD7F0025715A /* SeSACLectureNetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				850CA23F289757800054D7D7 /* Constant */,
+				85F60D3A289383F90057FDF0 /* Resource */,
 				85D8B32A28920CA0007F0773 /* Protocol */,
 				858FC31D2890DD7F0025715A /* AppDelegate.swift */,
-				858FC31F2890DD7F0025715A /* SceneDelegate.swift */,
-				858FC3232890DD7F0025715A /* Main.storyboard */,
-				85D8B33328923AA6007F0773 /* WebViewController.swift */,
 				85D8B33128923075007F0773 /* TranslateViewController.swift */,
+				85D8B33328923AA6007F0773 /* WebViewController.swift */,
+				858FC31F2890DD7F0025715A /* SceneDelegate.swift */,
 				85D8B32F28922369007F0773 /* LottoViewController.swift */,
 				85D8B32D28920F01007F0773 /* ViewController.swift */,
+				85F60D3728935D4B0057FDF0 /* LocationViewController.swift */,
 				858FC3312890E2020025715A /* SearchViewController.swift */,
 				858FC3352890E4CE0025715A /* ListTableViewCell.swift */,
+				858FC3232890DD7F0025715A /* Main.storyboard */,
 				858FC3362890E4CE0025715A /* ListTableViewCell.xib */,
 				858FC3262890DD800025715A /* Assets.xcassets */,
 				858FC3282890DD800025715A /* LaunchScreen.storyboard */,
@@ -92,8 +122,19 @@
 			isa = PBXGroup;
 			children = (
 				85D8B32B28920CCD007F0773 /* ViewPresentableProtocol.swift */,
+				850CA23D2897528B0054D7D7 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		85F60D3A289383F90057FDF0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				85F60D3C289384D30057FDF0 /* Happiness-Sans-Bold.ttf */,
+				85F60D3B289384D30057FDF0 /* Happiness-Sans-Regular.ttf */,
+				85F60D3D289384D30057FDF0 /* Happiness-Sans-Title.ttf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +153,10 @@
 			dependencies = (
 			);
 			name = SeSACLectureNetworkBasic;
+			packageProductDependencies = (
+				850CA24528977CDC0054D7D7 /* Alamofire */,
+				850CA24828977D1E0054D7D7 /* SwiftyJSON */,
+			);
 			productName = SeSACLectureNetworkBasic;
 			productReference = 858FC31A2890DD7F0025715A /* SeSACLectureNetworkBasic.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +185,10 @@
 				Base,
 			);
 			mainGroup = 858FC3112890DD7F0025715A;
+			packageReferences = (
+				850CA24428977CDC0054D7D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				850CA24728977D1E0054D7D7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 858FC31B2890DD7F0025715A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,7 +205,10 @@
 			files = (
 				858FC32A2890DD800025715A /* LaunchScreen.storyboard in Resources */,
 				858FC3382890E4CE0025715A /* ListTableViewCell.xib in Resources */,
+				85F60D3E289384D30057FDF0 /* Happiness-Sans-Regular.ttf in Resources */,
 				858FC3272890DD800025715A /* Assets.xcassets in Resources */,
+				85F60D40289384D30057FDF0 /* Happiness-Sans-Title.ttf in Resources */,
+				85F60D3F289384D30057FDF0 /* Happiness-Sans-Bold.ttf in Resources */,
 				858FC3252890DD7F0025715A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,14 +221,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D8B32E28920F01007F0773 /* ViewController.swift in Sources */,
+				850CA24328975FB60054D7D7 /* UserDefaultsHelper.swift in Sources */,
 				85D8B33428923AA6007F0773 /* WebViewController.swift in Sources */,
 				858FC31E2890DD7F0025715A /* AppDelegate.swift in Sources */,
 				858FC3372890E4CE0025715A /* ListTableViewCell.swift in Sources */,
 				85D8B33028922369007F0773 /* LottoViewController.swift in Sources */,
+				85F60D3828935D4B0057FDF0 /* LocationViewController.swift in Sources */,
 				85D8B32C28920CCD007F0773 /* ViewPresentableProtocol.swift in Sources */,
 				85D8B33228923075007F0773 /* TranslateViewController.swift in Sources */,
 				858FC3322890E2020025715A /* SearchViewController.swift in Sources */,
+				850CA23E2897528B0054D7D7 /* ReusableViewProtocol.swift in Sources */,
 				858FC3202890DD7F0025715A /* SceneDelegate.swift in Sources */,
+				850CA241289757C10054D7D7 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +450,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		850CA24428977CDC0054D7D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		850CA24728977D1E0054D7D7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		850CA24528977CDC0054D7D7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 850CA24428977CDC0054D7D7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		850CA24828977D1E0054D7D7 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 850CA24728977D1E0054D7D7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 858FC3122890DD7F0025715A /* Project object */;
 }

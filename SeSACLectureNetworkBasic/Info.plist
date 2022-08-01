@@ -21,6 +21,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Happiness-Sans-Bold.ttf</string>
+		<string>Happiness-Sans-Regular.ttf</string>
+		<string>Happiness-Sans-Title.ttf</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
