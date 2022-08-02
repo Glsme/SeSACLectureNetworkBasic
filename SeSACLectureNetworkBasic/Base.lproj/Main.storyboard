@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6vg-xa-7g6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r0t-uC-Rii">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -38,6 +38,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="AvL-UE-g7Y" id="KYJ-wJ-4eX"/>
                         <outlet property="searchTableView" destination="vA3-yw-xhR" id="iLZ-uv-FRa"/>
                     </connections>
                 </viewController>
@@ -152,31 +153,53 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t3L-ic-Buw">
-                                <rect key="frame" x="74" y="364" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t3L-ic-Buw">
+                                <rect key="frame" x="20" y="562.5" width="374" height="249.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t3L-ic-Buw" secondAttribute="height" multiplier="1.5" id="5aK-gU-NF3"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J82-kv-nRa">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IqE-bj-7Fh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="tintColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Change" image="arrow.down" catalog="system"/>
+                                <connections>
+                                    <action selector="translateButtonClicked:" destination="r0t-uC-Rii" eventType="touchUpInside" id="qaf-80-j0o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZYa-sB-pxR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="t3L-ic-Buw" firstAttribute="centerX" secondItem="tVQ-vN-QvI" secondAttribute="centerX" id="4Lq-Kh-Ohw"/>
+                            <constraint firstItem="t3L-ic-Buw" firstAttribute="width" secondItem="Dqa-Vk-4Ro" secondAttribute="width" id="5ba-5L-6mr"/>
+                            <constraint firstItem="J82-kv-nRa" firstAttribute="centerY" secondItem="tVQ-vN-QvI" secondAttribute="centerY" id="Dfe-VQ-rUU"/>
                             <constraint firstItem="Dqa-Vk-4Ro" firstAttribute="leading" secondItem="ZYa-sB-pxR" secondAttribute="leading" constant="20" id="KdC-pl-TGA"/>
+                            <constraint firstItem="ZYa-sB-pxR" firstAttribute="bottom" secondItem="t3L-ic-Buw" secondAttribute="bottom" constant="50" id="Lal-lk-gwd"/>
                             <constraint firstItem="Dqa-Vk-4Ro" firstAttribute="top" secondItem="ZYa-sB-pxR" secondAttribute="top" constant="50" id="dLu-gD-t3X"/>
                             <constraint firstItem="ZYa-sB-pxR" firstAttribute="trailing" secondItem="Dqa-Vk-4Ro" secondAttribute="trailing" constant="20" id="kif-V3-fZe"/>
+                            <constraint firstItem="J82-kv-nRa" firstAttribute="width" secondItem="Dqa-Vk-4Ro" secondAttribute="width" id="ovN-4j-fgp"/>
+                            <constraint firstItem="J82-kv-nRa" firstAttribute="centerX" secondItem="tVQ-vN-QvI" secondAttribute="centerX" id="zZW-4V-MNA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="outputTextView" destination="t3L-ic-Buw" id="HJP-fd-mbU"/>
                         <outlet property="userInputTextView" destination="Dqa-Vk-4Ro" id="P1Z-TY-iHj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msk-IZ-UMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="117"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="116.51785714285714"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="uOw-Hb-Rqr">
@@ -339,6 +362,7 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
@@ -347,6 +371,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

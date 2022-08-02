@@ -7,9 +7,13 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class TranslateViewController: UIViewController {
     
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var outputTextView: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문장을 작성해주세요."
 
@@ -22,7 +26,41 @@ class TranslateViewController: UIViewController {
         userInputTextView.textColor = .lightGray
         
         userInputTextView.font = UIFont(name: "Happiness-Sans-Bold", size: 16)
+        outputTextView.font = UIFont(name: "Happiness-Sans-Bold", size: 16)
         
+//        requestTranslatedData()
+        
+    }
+    
+    @IBAction func translateButtonClicked(_ sender: UIButton) {
+        guard let text = userInputTextView.text else { return }
+        requestTranslatedData(text: text)
+    }
+    
+    func requestTranslatedData(text: String) {
+        let url = EndPoint.translateURL
+        let parameter = ["source": "ko", "target": "en", "text": text]
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        AF.request(url, method: .post, parameters: parameter, headers: header).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200 {
+                    
+                } else {
+                    self.outputTextView.text = json["errorMessage"].stringValue
+                }
+                
+                self.outputTextView.text = json["message"]["result"]["translatedText"].stringValue
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 }
