@@ -400,14 +400,14 @@
                                                 <constraint firstAttribute="width" secondItem="zVB-ir-54c" secondAttribute="height" id="4JP-kN-Quj"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLz-aI-8Wr">
-                                            <rect key="frame" x="170.5" y="147" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLz-aI-8Wr">
+                                            <rect key="frame" x="189" y="155" width="5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-ZU-VMe">
-                                            <rect key="frame" x="20" y="188" width="343" height="107"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-ZU-VMe">
+                                            <rect key="frame" x="20" y="196" width="343" height="99"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -421,7 +421,7 @@
                                         <constraint firstItem="rLz-aI-8Wr" firstAttribute="centerX" secondItem="xfx-K2-ctQ" secondAttribute="centerX" id="J3Z-0L-F4x"/>
                                         <constraint firstItem="Gd9-ZU-VMe" firstAttribute="centerX" secondItem="xfx-K2-ctQ" secondAttribute="centerX" id="Vsl-Nr-Q3S"/>
                                         <constraint firstItem="zVB-ir-54c" firstAttribute="width" secondItem="xfx-K2-ctQ" secondAttribute="width" multiplier="0.3" id="dmD-aQ-cM8"/>
-                                        <constraint firstItem="rLz-aI-8Wr" firstAttribute="centerY" secondItem="xfx-K2-ctQ" secondAttribute="centerY" id="lKX-R7-hcq"/>
+                                        <constraint firstItem="rLz-aI-8Wr" firstAttribute="centerY" secondItem="xfx-K2-ctQ" secondAttribute="centerY" multiplier="1.05" id="lKX-R7-hcq"/>
                                         <constraint firstAttribute="trailing" secondItem="Gd9-ZU-VMe" secondAttribute="trailing" constant="20" id="tNQ-2k-ZcS"/>
                                         <constraint firstItem="Gd9-ZU-VMe" firstAttribute="leading" secondItem="xfx-K2-ctQ" secondAttribute="leading" constant="20" id="ulj-lv-W4U"/>
                                     </constraints>
@@ -441,6 +441,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="opx-Rb-M8E"/>
+                    <connections>
+                        <outlet property="beerCollectionView" destination="xcZ-f9-Tqb" id="aPe-rY-yTn"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVC-l2-m0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

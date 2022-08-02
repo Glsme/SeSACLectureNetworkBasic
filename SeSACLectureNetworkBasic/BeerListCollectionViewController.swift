@@ -7,14 +7,21 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 private let reuseIdentifier = "Cell"
 
 class BeerListCollectionViewController: UICollectionViewController {
-
+    
+    var beerList: [Beer] = []
+    @IBOutlet var beerCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLayout()
+        requestBeerList()
     }
     
     func setLayout() {
@@ -32,14 +39,43 @@ class BeerListCollectionViewController: UICollectionViewController {
         print("Layout Done")
     }
     
+    func requestBeerList() {
+        let url = EndPoint.beerListURL
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                for num in 1...25 {
+                let name = json[num]["name"].stringValue
+                let image_url = json[num]["image_url"].stringValue
+                let description = json[num]["description"].stringValue
+                
+                let data = Beer(name: name, image_url: image_url, description: description)
+                
+                self.beerList.append(data)
+                }
+                
+                self.beerCollectionView.reloadData()
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        beerList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerListCollectionViewCell.identifier, for: indexPath) as? BeerListCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.layer.cornerRadius = 10
+        cell.beerImageView.kf.setImage(with: URL(string: beerList[indexPath.row].image_url))
+        cell.beerName.text = beerList[indexPath.row].name
+        cell.beerExplain.text = beerList[indexPath.row].description
         
         return cell
     }

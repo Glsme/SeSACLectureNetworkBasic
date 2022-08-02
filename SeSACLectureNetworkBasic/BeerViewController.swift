@@ -29,7 +29,7 @@ class BeerViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 
                 let beerInfo = json[0]
                 let beerName = beerInfo["name"].stringValue
