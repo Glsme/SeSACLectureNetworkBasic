@@ -21,6 +21,7 @@ class LottoViewController: UIViewController {
     
     @IBOutlet var lottoNumLabels: [UILabel]!
     
+    var drwNoDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,24 @@ class LottoViewController: UIViewController {
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
-        requestLotto(number: 986)
+        requestLotto(number: numberOfDayBetween()/7 + 1)
+        
+    }
+    
+    func numberOfDayBetween() -> Int {
+        let now = Date()
+        let calendar = Calendar.current
+        
+        var components = DateComponents()
+        components.day = 7
+        components.month = 12
+        components.year = 2002
+        
+        let specialDay = calendar.date(from: components)
+        
+        components = calendar.dateComponents([.day], from: specialDay!, to: now)
+        
+        return Int(components.day ?? 0)
     }
     
     func requestLotto(number: Int) {
@@ -45,6 +63,8 @@ class LottoViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
+                
+                self.drwNoDate = json["drwNoDate"].stringValue
                 
                 let bonus = json["bnusNo"].intValue
                 let date = json["drwNoDate"].stringValue
@@ -60,9 +80,7 @@ class LottoViewController: UIViewController {
                     self.lottoNumLabels[num].text = lottoNumArray[num]
                 }
                 
-                print(lottoNumArray)
-                
-                print(bonus, date)
+//                print(lottoNumArray)
                 
                 self.numberTextField.text = date
                 
