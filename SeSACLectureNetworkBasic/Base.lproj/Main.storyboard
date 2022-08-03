@@ -16,14 +16,45 @@
                     <view key="view" contentMode="scaleToFill" id="kZ0-pw-KRw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-Vj-ATU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wod-CZ-9mw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageSearchCollectionViewCell" id="wmp-8k-hUY" customClass="ImageSearchCollectionViewCell" customModule="SeSACLectureNetworkBasic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aU6-zG-Hb0">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aWA-ka-o6R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aWA-ka-o6R" firstAttribute="trailing" secondItem="GmU-Vj-ATU" secondAttribute="trailing" id="5ia-Hy-PpP"/>
+                            <constraint firstItem="aWA-ka-o6R" firstAttribute="bottom" secondItem="GmU-Vj-ATU" secondAttribute="bottom" id="b40-ph-7Lq"/>
+                            <constraint firstItem="GmU-Vj-ATU" firstAttribute="leading" secondItem="aWA-ka-o6R" secondAttribute="leading" id="d8E-Kp-opX"/>
+                            <constraint firstItem="GmU-Vj-ATU" firstAttribute="top" secondItem="aWA-ka-o6R" secondAttribute="top" id="eLs-mr-n6i"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="search" image="magnifyingglass" catalog="system" id="KOk-Sm-g8M"/>
+                    <connections>
+                        <outlet property="imageSearchCollectionView" destination="GmU-Vj-ATU" id="1in-OT-IEX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yc7-ak-KHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="117"/>
+            <point key="canvasLocation" x="-49.275362318840585" y="116.51785714285714"/>
         </scene>
         <!--Movie-->
         <scene sceneID="tne-QT-ifu">
