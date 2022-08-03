@@ -9,6 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--search-->
+        <scene sceneID="Cmp-fs-8GJ">
+            <objects>
+                <viewController storyboardIdentifier="ImageSearchViewController" id="z9D-Mq-KlG" customClass="ImageSearchViewController" customModule="SeSACLectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZ0-pw-KRw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aWA-ka-o6R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="search" image="magnifyingglass" catalog="system" id="KOk-Sm-g8M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yc7-ak-KHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="117"/>
+        </scene>
         <!--Movie-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -455,10 +471,12 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8LX-hq-MFa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mpx-gM-hL8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="z9D-Mq-KlG" kind="relationship" relationship="viewControllers" id="Ykf-nM-Jnr"/>
                         <segue destination="akk-7J-hxk" kind="relationship" relationship="viewControllers" id="ta3-k1-DvA"/>
                         <segue destination="r0t-uC-Rii" kind="relationship" relationship="viewControllers" id="KRZ-jd-xYe"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qqM-2V-V8S"/>
@@ -500,6 +518,7 @@
         <image name="drop.fill" catalog="system" width="101" height="128"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="stopwatch" catalog="system" width="121" height="128"/>
         <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="tv" catalog="system" width="128" height="97"/>

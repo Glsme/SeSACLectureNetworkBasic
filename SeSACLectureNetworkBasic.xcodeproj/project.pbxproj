@@ -26,6 +26,7 @@
 		858FC3322890E2020025715A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FC3312890E2020025715A /* SearchViewController.swift */; };
 		858FC3372890E4CE0025715A /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FC3352890E4CE0025715A /* ListTableViewCell.swift */; };
 		858FC3382890E4CE0025715A /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858FC3362890E4CE0025715A /* ListTableViewCell.xib */; };
+		85906D5E289A0963001468AE /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85906D5D289A0963001468AE /* ImageSearchViewController.swift */; };
 		85D8B32C28920CCD007F0773 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B32B28920CCD007F0773 /* ViewPresentableProtocol.swift */; };
 		85D8B32E28920F01007F0773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B32D28920F01007F0773 /* ViewController.swift */; };
 		85D8B33028922369007F0773 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D8B32F28922369007F0773 /* LottoViewController.swift */; };
@@ -56,6 +57,7 @@
 		858FC3312890E2020025715A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		858FC3352890E4CE0025715A /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		858FC3362890E4CE0025715A /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		85906D5D289A0963001468AE /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		85D8B32B28920CCD007F0773 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		85D8B32D28920F01007F0773 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85D8B32F28922369007F0773 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				85693D612898BD1900161F2A /* BoxOfficeModel.swift */,
 				858FC3352890E4CE0025715A /* ListTableViewCell.swift */,
 				858FC3232890DD7F0025715A /* Main.storyboard */,
+				85906D5D289A0963001468AE /* ImageSearchViewController.swift */,
 				85693D6528994D0400161F2A /* BeerListCollectionViewCell.swift */,
 				85693D6328994CDD00161F2A /* BeerListCollectionViewController.swift */,
 				85693D67289952BE00161F2A /* Beer.swift */,
@@ -256,6 +259,7 @@
 				858FC3322890E2020025715A /* SearchViewController.swift in Sources */,
 				850CA23E2897528B0054D7D7 /* ReusableViewProtocol.swift in Sources */,
 				858FC3202890DD7F0025715A /* SceneDelegate.swift in Sources */,
+				85906D5E289A0963001468AE /* ImageSearchViewController.swift in Sources */,
 				850CA241289757C10054D7D7 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

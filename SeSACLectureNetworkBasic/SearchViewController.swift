@@ -35,7 +35,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // XIB: xml interface builder <= Nib
         searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
-        requestBoxOffice(text: "20220801")
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd" // TMI -> "yyyyMMdd" "YYYYMMdd" (찾아보세요)
+//        let dateResult = Date(timeIntervalSinceNow: -86400)
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let dateResult = format.string(from: yesterday!)
+        
+        requestBoxOffice(text: dateResult)
     }
     
     func requestBoxOffice(text: String) {

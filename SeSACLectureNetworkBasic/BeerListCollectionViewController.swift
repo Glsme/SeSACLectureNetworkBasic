@@ -47,14 +47,13 @@ class BeerListCollectionViewController: UICollectionViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                for num in 1...25 {
-                let name = json[num]["name"].stringValue
-                let image_url = json[num]["image_url"].stringValue
-                let description = json[num]["description"].stringValue
-                
-                let data = Beer(name: name, image_url: image_url, description: description)
-                
-                self.beerList.append(data)
+                for item in json.arrayValue {
+                    let name = item["name"].stringValue
+                    let image_url = item["image_url"].stringValue
+                    let description = item["description"].stringValue
+                    
+                    let data = Beer(name: name, image_url: image_url, description: description)
+                    self.beerList.append(data)
                 }
                 
                 self.beerCollectionView.reloadData()
