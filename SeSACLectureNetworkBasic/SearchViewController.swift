@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 /// 1. 왼팔 / 오른팔
 /// 2. 테이블 뷰 아울렛 연결
@@ -21,6 +22,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //BoxOffice 배열
     var list: [BoxOfficeModel] = []
+    
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +49,14 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func requestBoxOffice(text: String) {
         
+        hud.show(in: view)
+        
         //일별 박스오피스 배열 멤버 삭제
         self.list.removeAll()
         
         //인증키 제한
         let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -70,9 +75,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(self.list)
                 
                 self.searchTableView.reloadData()
-                
+                self.hud.dismiss()
+
             case .failure(let error):
                 print(error)
+                self.hud.dismiss()
             }
         }
     }

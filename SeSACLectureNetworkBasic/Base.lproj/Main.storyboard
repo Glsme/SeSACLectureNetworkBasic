@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-Vj-ATU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wod-CZ-9mw">
                                     <size key="itemSize" width="128" height="128"/>
@@ -37,18 +37,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ybM-6P-Dmu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oR7-Vx-anm"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aWA-ka-o6R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aWA-ka-o6R" firstAttribute="trailing" secondItem="GmU-Vj-ATU" secondAttribute="trailing" id="5ia-Hy-PpP"/>
+                            <constraint firstItem="ybM-6P-Dmu" firstAttribute="leading" secondItem="aWA-ka-o6R" secondAttribute="leading" id="Hjk-JJ-3Wc"/>
+                            <constraint firstItem="ybM-6P-Dmu" firstAttribute="top" secondItem="aWA-ka-o6R" secondAttribute="top" id="XUP-nt-k5g"/>
                             <constraint firstItem="aWA-ka-o6R" firstAttribute="bottom" secondItem="GmU-Vj-ATU" secondAttribute="bottom" id="b40-ph-7Lq"/>
                             <constraint firstItem="GmU-Vj-ATU" firstAttribute="leading" secondItem="aWA-ka-o6R" secondAttribute="leading" id="d8E-Kp-opX"/>
-                            <constraint firstItem="GmU-Vj-ATU" firstAttribute="top" secondItem="aWA-ka-o6R" secondAttribute="top" id="eLs-mr-n6i"/>
+                            <constraint firstItem="GmU-Vj-ATU" firstAttribute="top" secondItem="ybM-6P-Dmu" secondAttribute="bottom" id="kdQ-Ca-ZN9"/>
+                            <constraint firstItem="ybM-6P-Dmu" firstAttribute="trailing" secondItem="aWA-ka-o6R" secondAttribute="trailing" id="zdv-a5-lC5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="search" image="magnifyingglass" catalog="system" id="KOk-Sm-g8M"/>
                     <connections>
+                        <outlet property="imageSearchBar" destination="ybM-6P-Dmu" id="s07-w2-R0e"/>
                         <outlet property="imageSearchCollectionView" destination="GmU-Vj-ATU" id="1in-OT-IEX"/>
                     </connections>
                 </viewController>
@@ -347,16 +358,57 @@
                                     <action selector="noticationButtonClicked:" destination="7zX-xq-0yy" eventType="touchUpInside" id="SoM-Pf-4wH"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQ4-T8-N7m">
+                                <rect key="frame" x="61" y="180" width="51" height="31"/>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bj4-Vh-8M7">
+                                <rect key="frame" x="213" y="179" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="afG-hY-hV9">
+                                <rect key="frame" x="10" y="251" width="394" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="afG-hY-hV9" secondAttribute="height" id="ye0-lq-r8V"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otw-SP-xcy">
+                                <rect key="frame" x="20" y="695" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bS5-DK-5GS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="downloadImage:" destination="7zX-xq-0yy" eventType="touchUpInside" id="GWM-ZY-ZYC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BeM-iR-cJ6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Otw-SP-xcy" firstAttribute="centerX" secondItem="Qfw-v9-MUw" secondAttribute="centerX" id="0eR-qk-GBX"/>
+                            <constraint firstItem="VQ4-T8-N7m" firstAttribute="leading" secondItem="BeM-iR-cJ6" secondAttribute="leading" constant="61" id="1MD-ZO-V1U"/>
+                            <constraint firstItem="afG-hY-hV9" firstAttribute="centerX" secondItem="Qfw-v9-MUw" secondAttribute="centerX" id="DYg-Ri-hYA"/>
+                            <constraint firstItem="afG-hY-hV9" firstAttribute="leading" secondItem="BeM-iR-cJ6" secondAttribute="leading" constant="10" id="Etd-s0-eiC"/>
+                            <constraint firstItem="BeM-iR-cJ6" firstAttribute="trailing" secondItem="Otw-SP-xcy" secondAttribute="trailing" constant="20" id="Kwo-ri-Ga8"/>
+                            <constraint firstItem="BeM-iR-cJ6" firstAttribute="trailing" secondItem="bj4-Vh-8M7" secondAttribute="trailing" constant="70" id="OYS-y5-4EJ"/>
                             <constraint firstItem="BeM-iR-cJ6" firstAttribute="trailing" secondItem="Eo0-Sr-IYX" secondAttribute="trailing" constant="20" id="PEw-Zh-Pdb"/>
+                            <constraint firstItem="BeM-iR-cJ6" firstAttribute="trailing" secondItem="afG-hY-hV9" secondAttribute="trailing" constant="10" id="WnC-pc-Iev"/>
                             <constraint firstItem="Eo0-Sr-IYX" firstAttribute="top" secondItem="BeM-iR-cJ6" secondAttribute="top" constant="20" id="fVo-KG-nGe"/>
                             <constraint firstItem="Eo0-Sr-IYX" firstAttribute="leading" secondItem="BeM-iR-cJ6" secondAttribute="leading" constant="20" id="fvY-r4-5HP"/>
+                            <constraint firstItem="afG-hY-hV9" firstAttribute="centerY" secondItem="Qfw-v9-MUw" secondAttribute="centerY" id="gpS-qq-mhg"/>
+                            <constraint firstItem="afG-hY-hV9" firstAttribute="top" secondItem="VQ4-T8-N7m" secondAttribute="bottom" constant="40" id="n6N-YH-eTU"/>
+                            <constraint firstItem="Otw-SP-xcy" firstAttribute="top" secondItem="afG-hY-hV9" secondAttribute="bottom" constant="50" id="qEe-hW-hhZ"/>
+                            <constraint firstItem="afG-hY-hV9" firstAttribute="top" secondItem="bj4-Vh-8M7" secondAttribute="bottom" constant="41" id="v7a-mC-fCq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Noti" image="stopwatch" catalog="system" id="fmv-Lc-WaP"/>
+                    <connections>
+                        <outlet property="imageView" destination="afG-hY-hV9" id="vjo-Xu-7RP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOd-OV-XW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

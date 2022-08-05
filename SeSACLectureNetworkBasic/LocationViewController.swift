@@ -11,6 +11,7 @@ class LocationViewController: UIViewController {
 
     // Notification 1.
     let notificationCenter = UNUserNotificationCenter.current()
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,22 @@ class LocationViewController: UIViewController {
 
         requestAuthorization()
     }
-
+    
+    @IBAction func downloadImage(_ sender: UIButton) {
+        let url = "https://apod.nasa.gov/apod/image/2208/M13_final2_sinfirma.jpg"
+        print("1", Thread.isMainThread)
+        DispatchQueue.global().async {
+            print("2", Thread.isMainThread)
+            let data = try! Data(contentsOf: URL(string: url)!)
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                print("3", Thread.isMainThread)
+                self.imageView.image = image
+            }
+        }
+    }
+    
     @IBAction func noticationButtonClicked(_ sender: UIButton) {
 //        requestAuthorization()
     }
